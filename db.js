@@ -27,3 +27,4 @@ function getRecipe(id, db = connection){
   return db('recipes')
   .where('id', id).first()
 }
+
