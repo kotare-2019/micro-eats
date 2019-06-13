@@ -1,30 +1,41 @@
-const environment = process.env.NODE_ENV || 'development'
-const config = require('./knexfile')[environment]
-const connection = require('knex')(config)
+const environment = process.env.NODE_ENV || "development";
+const config = require("./knexfile")[environment];
+const connection = require("knex")(config);
+
+function getProfiles(db = connection) {
+  return db("profiles").select();
+}
+
+function getProfile(id, db = connection) {
+  return db("profiles")
+    .where("id", id)
+    .first();
+}
+
+function getRecipes(db = connection) {
+  return db("recipes")
+    .join("profiles", "profiles.id", "recipes.profile_id")
+    .select("*", "recipes.id AS id");
+}
+
+function getRecipe(id, db = connection) {
+  return db("recipes")
+    .where("id", id)
+    .first();
+}
+
+function addUser(database, body, db = connection) {
+  return db(database).insert({
+    name: body.name,
+    email: body.email,
+    bio: body.bio
+  });
+}
 
 module.exports = {
-  getUser: getUser,
-  getUsers: getUsers,
+  getProfile: getProfile,
+  getProfiles: getProfiles,
   getRecipe: getRecipe,
-  getRecipes: getRecipes
-}
-
-function getUsers (db = connection) {
-  return db('profiles').select()
-}
-
-function getUser (id, db = connection) {
-  return db('profiles').where('id', id).first()
-}
-
-function getRecipes ( db = connection){
-  return db('recipes')
-  .join('profiles', 'profiles.id', 'recipes.profile_id')
-  .select('*', 'recipes.id AS id')
-}
-
-function getRecipe(id, db = connection){
-  return db('recipes')
-  .where('id', id).first()
-}
-
+  getRecipes: getRecipes,
+  addUser: addUser
+};
