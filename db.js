@@ -27,3 +27,7 @@ function getRecipe(id, db = connection){
   return db('recipes')
   .where('id', id).first()
 }
+//wating for form needing test
+function addUser(table, body, db = connection){
+  return db(table).insert({name: body.name, email: body.email, bio: body.bio})
+}
