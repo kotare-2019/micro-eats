@@ -7,21 +7,21 @@ exports.seed = function(knex, Promise) {
       return knex("recipes").insert([
         {
           id: 1,
-          profile_id: 1,
+          profile_id: 88802,
           title: "title1",
           recipe_post: "hjklh",
           rating: 4
         },
         {
           id: 2,
-          profile_id: 2,
-          title: "title2",
-          recipe_post: "jkhjk",
-          rating: 0
+          profile_id: 88802,
+          title: "Simple Semolina Pasta",
+          recipe_post: "This is where the recipe will go",
+          rating: 5
         },
         {
           id: 3,
-          profile_id: 3,
+          profile_id: 88804,
           title: "title3",
           recipe_post: "jhkkh",
           rating: 2
