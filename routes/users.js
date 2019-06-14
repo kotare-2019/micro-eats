@@ -10,8 +10,9 @@ router.get("/", (req, res) => {
       recipes: recipes
     };
     db.getProfiles()
-      .then(profiles  => {
+      .then(profiles => {
         viewData.profiles = profiles;
+        // console.log(viewData);
         res.render("index", viewData);
       })
       .catch(err => {
@@ -21,24 +22,34 @@ router.get("/", (req, res) => {
 });
 
 router.get("/recipe/:id", (req, res, next) => {
-  console.log(req.params.id);
+  // console.log(req.params.id);
   res.send("Recipe Route Working");
 });
 
+router.get("/profile/:id", (req, res, next) => {
+  db.getProfile(req.params.id).then(profile => {
+    // console.log(profile);
+    res.render("profile", { profile: profile });
+  });
+});
 
-router.get('/profile/:id', (req, res, next)=>{
-  db.getUser(req.params.id)
-  .then(profile=>{
-    console.log(profile)
-    res.render('profile', {profile: profile})
+router.get("/addprofile", (req, res) => {
+  res.render("addProfile");
+});
+
+router.post("/addprofile", (req, res, next) => {
+  if (req.body.name === "" || req.body.email === "" || req.body.bio === "") {
+    return;
+  } else {
+    db.addUser("profiles", req.body).then(res.redirect("/"));
+  }
+});
+router.get("/delete/:id", (req, res) => {
+  db.delProfile(req.params.id)
+  .then((foundThing) => {
+    console.log(foundThing)
+    res.redirect('/')
   })
 })
+
 module.exports = router;
-
-router.get('/addprofile', (req, res, next)=>{
-  res.render('addProfile')
-})
-
-router.post('/addprofile', (req, res, next)=>{
-  console.log
-})
