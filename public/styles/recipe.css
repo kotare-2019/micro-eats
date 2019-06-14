@@ -1,3 +1,9 @@
+body{
+    background-color: rgba(83, 209, 226, 0.267);
+    margin: auto;
+    text-align: center
+
+}
 #recipe-box{
     width: 40%;
     border: black 1px solid;
@@ -13,4 +19,12 @@ img{
 
 #img-div{
 }
+h1{
+    width:40%;
+    border-bottom: black solid 1px;
+    margin: auto;
+    margin-bottom: 10px
+}
+
+
 
