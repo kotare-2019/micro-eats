@@ -44,12 +44,29 @@ router.post("/addprofile", (req, res, next) => {
     db.addUser("profiles", req.body).then(res.redirect("/"));
   }
 });
+
 router.get("/delete/:id", (req, res) => {
-  db.delProfile(req.params.id)
-  .then((foundThing) => {
-    console.log(foundThing)
-    res.redirect('/')
-  })
-})
+  db.delProfile(req.params.id).then(foundThing => {
+    console.log(foundThing);
+    res.redirect("/");
+  });
+});
+//merge and test
+
+router.get("/addrecipe", (req, res) => {
+  res.render("addRecipe");
+});
+
+router.post("/addrecipe", (req, res, next) => {
+  if (
+    req.body.title === "" ||
+    req.body.post === "" ||
+    req.body.recipe_picture === ""
+  ) {
+    return;
+  } else {
+    db.addUser("profiles", req.body).then(res.redirect("/"));
+  }
+});
 
 module.exports = router;
