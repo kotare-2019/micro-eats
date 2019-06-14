@@ -1,0 +1,30 @@
+body{
+    background-color: rgba(83, 209, 226, 0.267);
+    margin: auto;
+    text-align: center
+
+}
+#recipe-box{
+    width: 40%;
+    border: black 1px solid;
+    margin:auto;
+    text-align: center;
+    background-color: rgba(43, 128, 226, 0.623)
+}
+img{
+    width: 60%;
+    padding:5px;
+    border: solid black 1px
+}
+
+#img-div{
+}
+h1{
+    width:40%;
+    border-bottom: black solid 1px;
+    margin: auto;
+    margin-bottom: 10px
+}
+
+
+
