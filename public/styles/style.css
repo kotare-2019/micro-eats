@@ -1,45 +1,58 @@
 body {
-    background-color: rgba(83, 209, 226, 0.267);
-    font-family: 'Roboto', sans-serif;
-
+  background-color: rgba(83, 209, 226, 0.267);
+  font-family: "Roboto", sans-serif;
 }
 
-.recipe_display{
-    display: flex;
-    justify-content: space-around;
-    
+.main-wrap {
+  display: flex;
+  justify-content: space-around;
 }
 
-.recipe_box{
-    display: flex;
-    padding:10px;
-    flex-direction: column;
-    height: 200px;
-    width: 19%;
-    /* border: solid black 1px; */
-    text-align: center;
-    
+.recipe_display {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 75%;
+}
+
+.recipe_box {
+  margin-top: 3%;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  height: 240px;
+  border-radius: 4px;
+  /* width: 19%; */
+  /* border: solid black 1px; */
+  text-align: center;
+  background-color: rgba(43, 128, 226, 0.623);
 }
 
 .imgs {
-    height: 150px;
-    width: 180px;
-    
-}
-.img_div{
-    border:1px solid black;
+  height: 200px;
 }
 
 
-h1{
-    text-align: center;
-    border:solid 1px black;
+h1 {
+  text-align: center;
+  font-size: 3.5em;
+  background-color: ;
 }
 
-#users_column{
-    border: 1px black solid;
-    width: 19%;
+#users_column {
+  width: 20%;
+  margin-top: 2.5%;
+  font-size: 1.5em;
 }
-ul{
-    
+ul a {
+  text-decoration: none;
+  color: black;
+}
+
+ul a:hover {
+  color: palevioletred;
+}
+
+li {
+  list-style-type: none;
 }
