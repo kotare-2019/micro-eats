@@ -39,11 +39,21 @@ function delProfile(id, db = connection) {
     .delete();
 }
 
+
+function addRecipe(database, body, db = connection) {
+  return db(database).insert({
+    name: body.title,
+    email: body.post,
+    bio: body.recipe_picture,
+  });
+}
+
 module.exports = {
   getProfile: getProfile,
   getProfiles: getProfiles,
   getRecipe: getRecipe,
   getRecipes: getRecipes,
   addUser: addUser,
-  delProfile: delProfile
+  delProfile: delProfile,
+  addRecipe: addRecipe,
 };

@@ -68,7 +68,7 @@ router.get("/addrecipe/:id", (req, res) => {
   res.render("addRecipe");
 });
 
-router.post("/addrecipe", (req, res, next) => {
+router.post("/addrecipe/:id", (req, res, next) => {
   if (
     req.body.title === "" ||
     req.body.post === "" ||
@@ -76,7 +76,7 @@ router.post("/addrecipe", (req, res, next) => {
   ) {
     return;
   } else {
-    db.addUser("profiles", req.body).then(res.redirect("/"));
+    db.addRecipe("recipes", req.body).then(res.redirect("/"));
   }
 });
 
