@@ -32,10 +32,18 @@ function addUser(database, body, db = connection) {
   });
 }
 
+function delProfile(id, db = connection) {
+  console.log(id)
+  return db("profiles")
+    .where("id", id)
+    .delete();
+}
+
 module.exports = {
   getProfile: getProfile,
   getProfiles: getProfiles,
   getRecipe: getRecipe,
   getRecipes: getRecipes,
-  addUser: addUser
+  addUser: addUser,
+  delProfile: delProfile
 };
