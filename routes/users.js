@@ -61,15 +61,16 @@ router.get("/delete/:id", (req, res) => {
 //merge and test
 
 router.get("/addrecipe/:id", (req, res) => {
-  res.render("addRecipe");
+  const profile_id = {id:req.params.id}
+  res.render("addRecipe", profile_id);
 });
 
 router.post("/addrecipe/:id", (req, res, next) => {
   const newRecipe = {
     profile_id: req.params.id,
-    recipe_post: req.body.recipe_post,
+    recipe_picture: req.body.recipe_picture,
     title: req.body.title,
-    recipe_picture: req.body.picture
+    recipe_post: req.body.recipe_post
   };
   if (
     req.body.title === "" ||
@@ -79,7 +80,9 @@ router.post("/addrecipe/:id", (req, res, next) => {
     return;
   } else {
     db.addRecipe("recipes", newRecipe).then(res.redirect("/"));
+
   }
+
 });
 
 module.exports = router;
