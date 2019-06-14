@@ -64,7 +64,7 @@ router.get("/delete/:id", (req, res) => {
 });
 //merge and test
 
-router.get("/addrecipe", (req, res) => {
+router.get("/addrecipe/:id", (req, res) => {
   res.render("addRecipe");
 });
 
