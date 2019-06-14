@@ -65,19 +65,28 @@ router.get("/delete/:id", (req, res) => {
 //merge and test
 
 router.get("/addrecipe/:id", (req, res) => {
-  res.render("addRecipe");
+  const profile_id = {id:req.params.id}
+  res.render("addRecipe", profile_id);
 });
 
 router.post("/addrecipe/:id", (req, res, next) => {
-  if (
-    req.body.title === "" ||
-    req.body.post === "" ||
-    req.body.recipe_picture === ""
-  ) {
-    return;
-  } else {
-    db.addRecipe("recipes", req.body).then(res.redirect("/"));
+  const newRecipe = {
+    profile_id: req.params.id,
+    recipe_picture: req.body.recipe_picture,
+    title: req.body.title,
+    recipe_post: req.body.recipe_post
   }
+  // console.log(newRecipe)
+
+  // if (
+  //   req.body.title === "" ||
+  //   req.body.post === "" ||
+  //   req.body.recipe_picture === ""
+  // ) {
+  //   return;
+  // } else {
+  //   db.addRecipe("recipes", req.body).then(res.redirect("/"));
+  // }
 });
 
 module.exports = router;
