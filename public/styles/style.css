@@ -1,30 +1,29 @@
 body {
     background-color: rgba(83, 209, 226, 0.267);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;    
 
 }
 
 .recipe_display{
     display: flex;
     justify-content: space-around;
-    
+    flex-wrap: wrap;  
 }
 
 .recipe_box{
     display: flex;
     padding:10px;
     flex-direction: column;
-    height: 200px;
-    width: 19%;
+    height: 25%;
+    border-radius: 4px;
+    /* width: 19%; */
     /* border: solid black 1px; */
     text-align: center;
-    
+    background-color: rgba(43, 128, 226, 0.623);
 }
 
 .imgs {
-    height: 150px;
-    width: 180px;
-    
+height:200px
 }
 .img_div{
     border:1px solid black;
