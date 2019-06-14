@@ -23,7 +23,10 @@ router.get("/", (req, res) => {
 
 router.get("/recipe/:id", (req, res, next) => {
   // console.log(req.params.id);
-  res.send("Recipe Route Working");
+ db.getRecipe(req.params.id)
+ .then(recipe =>{
+   res.render('recipe', recipe)
+ })
 });
 
 router.get("/profile/:id", (req, res, next) => {
@@ -76,17 +79,17 @@ router.post("/addrecipe/:id", (req, res, next) => {
     title: req.body.title,
     recipe_post: req.body.recipe_post
   }
-  // console.log(newRecipe)
+  console.log(newRecipe)
 
-  // if (
-  //   req.body.title === "" ||
-  //   req.body.post === "" ||
-  //   req.body.recipe_picture === ""
-  // ) {
-  //   return;
-  // } else {
-  //   db.addRecipe("recipes", req.body).then(res.redirect("/"));
-  // }
+  if (
+    req.body.title === "" ||
+    req.body.post === "" ||
+    req.body.recipe_picture === ""
+  ) {
+    res.redirect('/')
+  } else {
+    db.addRecipe("recipes", newRecipe).then(res.redirect("/"));
+  }
 });
 
 module.exports = router;
