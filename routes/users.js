@@ -33,9 +33,20 @@ router.get("/profile/:id", (req, res, next) => {
   });
 });
 
-router.get("/addprofile", (req, res) => {
-  res.render("addProfile");
-});
+router.get('/profile/:id', (req, res, next)=>{
+  db.getProfile(req.params.id)
+  .then(profile=>{
+    console.log(profile)
+    res.render('profile', {profile: profile})
+  })
+})
+
+router.get('/addprofile', (req, res, next)=>{
+  
+    res.render('addProfile')
+
+})
+
 
 router.post("/addprofile", (req, res, next) => {
   if (req.body.name === "" || req.body.email === "" || req.body.bio === "") {

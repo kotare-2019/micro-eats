@@ -1,15 +1,25 @@
+
 <head>
   <link rel="stylesheet" href="/styles/style.css">
+ <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <script src="/scripts/slides.js">
+  </script>
 </head>
-<h1>Micro Eats</h1>
+
+<h1>KōtarEATS</h1>
+
 <div class="recipe_display">
+
   {{#each recipes}}
-  <div class="recipe_box">
+<div class="recipe_box">
+    <div class="img_div"><img class="imgs" src="{{recipe_picture}}" alt="tasty food"> 
+    </div>
     <p><a href="/recipe/{{id}}">{{title}}</a> Rated:({{rating}}*)</p>
   </div>
-  {{/each}}
+{{/each}}
 
-  <div id="users_column">
+
+  <div class="column" id="users_column">
     <ul>
       {{#each profiles}}
       <li><a href="/profile/{{id}}">{{name}}</a></li>
@@ -17,4 +27,5 @@
     </ul>
     <a href="/addprofile/">Add Profile</a>
   </div>
+
 </div>

@@ -1,3 +1,9 @@
+body {
+    background-color: rgba(83, 209, 226, 0.267);
+    font-family: 'Roboto', sans-serif;
+
+}
+
 .recipe_display{
     display: flex;
     justify-content: space-around;
@@ -6,11 +12,34 @@
 
 .recipe_box{
     display: flex;
-    border: solid black 1px;
+    padding:10px;
+    flex-direction: column;
     height: 200px;
-    width: 200px;
+    width: 19%;
+    /* border: solid black 1px; */
+    text-align: center;
     
 }
+
+.imgs {
+    height: 150px;
+    width: 180px;
+    
+}
+.img_div{
+    border:1px solid black;
+}
+
+
 h1{
-    text-align: center
+    text-align: center;
+    border:solid 1px black;
+}
+
+#users_column{
+    border: 1px black solid;
+    width: 19%;
+}
+ul{
+    
 }
