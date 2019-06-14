@@ -42,9 +42,10 @@ function delProfile(id, db = connection) {
 
 function addRecipe(database, body, db = connection) {
   return db(database).insert({
-    name: body.title,
-    email: body.post,
-    bio: body.recipe_picture,
+    profile_id: body.profile_id,
+    title: body.title,
+    recipe_post: body.recipe_post,
+    recipe_picture: body.recipe_picture,
   });
 }
 

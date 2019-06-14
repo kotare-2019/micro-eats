@@ -33,20 +33,16 @@ router.get("/profile/:id", (req, res, next) => {
   });
 });
 
-router.get('/profile/:id', (req, res, next)=>{
-  db.getProfile(req.params.id)
-  .then(profile=>{
-    console.log(profile)
-    res.render('profile', {profile: profile})
-  })
-})
+router.get("/profile/:id", (req, res, next) => {
+  db.getProfile(req.params.id).then(profile => {
+    console.log(profile);
+    res.render("profile", { profile: profile });
+  });
+});
 
-router.get('/addprofile', (req, res, next)=>{
-  
-    res.render('addProfile')
-
-})
-
+router.get("/addprofile", (req, res, next) => {
+  res.render("addProfile");
+});
 
 router.post("/addprofile", (req, res, next) => {
   if (req.body.name === "" || req.body.email === "" || req.body.bio === "") {
@@ -65,19 +61,28 @@ router.get("/delete/:id", (req, res) => {
 //merge and test
 
 router.get("/addrecipe/:id", (req, res) => {
-  res.render("addRecipe");
+  const profile_id = {id:req.params.id}
+  res.render("addRecipe", profile_id);
 });
 
 router.post("/addrecipe/:id", (req, res, next) => {
+  const newRecipe = {
+    profile_id: req.params.id,
+    recipe_picture: req.body.recipe_picture,
+    title: req.body.title,
+    recipe_post: req.body.recipe_post
+  };
   if (
     req.body.title === "" ||
-    req.body.post === "" ||
+    req.body.recipe_post === "" ||
     req.body.recipe_picture === ""
   ) {
     return;
   } else {
-    db.addRecipe("recipes", req.body).then(res.redirect("/"));
+    db.addRecipe("recipes", newRecipe).then(res.redirect("/"));
+
   }
+
 });
 
 module.exports = router;
