@@ -1,0 +1,47 @@
+<link rel="stylesheet", href="/styles/form.css">
+
+<div class="form">
+    <div id="add-prof-title">
+        <h1>Add Profile</h1>
+    </div>
+    <form action="/addprofile/{{req.params.id}}" method="post">
+        <div class="row">
+            <div class="left-col">
+                <label for="name">Full Name</label>
+            </div>
+            <div class="right-col">
+                <input type="text" id="name" name="name" placeholder="Your name..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="left-col">
+                <label for="profile_picture">Profile Picture</label>
+            </div>
+            <div class="right-col">
+                <input type="text" id="profile_picture" name="profile_picture" placeholder="Profile Picture URL">
+            </div>
+        </div>
+        <div class="row">
+            <div class="left-col">
+                <label for="email">Email</label>
+            </div>
+            <div class="right-col">
+                <lable id="email" name="email">
+                    <input type="text" name="email" placeholder="Email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="left-col">
+                <label for="bio">About Me:</label>
+            </div>
+            <div class="right-col">
+                <textarea id="bio" name="bio" placeholder="Tell us about yourself" style="height:200px"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <input id="submit" type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+</form>
+</div>
