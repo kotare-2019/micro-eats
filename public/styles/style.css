@@ -1,5 +1,5 @@
 body {
-    backg
+    background-color: rgba(83, 209, 226, 0.267);
 }
 
 .recipe_display{
@@ -10,15 +10,23 @@ body {
 
 .recipe_box{
     display: flex;
+    flex-direction: column;
     height: 200px;
-    width: 200px;
+    width: 19%;
+    border: solid black 1px;
 }
 
-.recipeimg {
+.imgs {
     height: 150px;
     width: 180px;
 }
 
 h1{
-    text-align: center
+    text-align: center;
+    border:solid 1px black;
+}
+
+#users_column{
+    border: 1px black solid;
+    width: 19%
 }

@@ -27,7 +27,7 @@ router.get("/recipe/:id", (req, res, next) => {
 
 
 router.get('/profile/:id', (req, res, next)=>{
-  db.getUser(req.params.id)
+  db.getProfile(req.params.id)
   .then(profile=>{
     console.log(profile)
     res.render('profile', {profile: profile})

@@ -27,7 +27,7 @@ exports.seed = function(knex, Promise) {
           title: "title3",
           recipe_post: "jhkkh",
           rating: 2,
-          recipe_picture: "https://assets.bonappetit.com/photos/5aa94eb56ed79626bc262c39/16:9/w_1200,c_limit/cast-iron-pizza-with-fennel-and-sausage.jpg"
+          recipe_picture: "https://realhousemoms.com/wp-content/uploads/One-Pot-Alfredo-Pasta-IG.jpg"
         }
       ]);
     });
