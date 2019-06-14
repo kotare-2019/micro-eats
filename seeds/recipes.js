@@ -19,7 +19,7 @@ exports.seed = function(knex, Promise) {
           title: "Simple Semolina Pasta",
           recipe_post: "This is where the recipe will go",
           rating: 5,
-          recipe_picture: "https://assets.bonappetit.com/photos/5aa94eb56ed79626bc262c39/16:9/w_1200,c_limit/cast-iron-pizza-with-fennel-and-sausage.jpg"
+          recipe_picture: "https://www.ijustmakesandwiches.com/wp-content/uploads/2019/02/how-to-make-homemade-pasta-2-of-3.jpg"
         },
         {
           id: 3,
@@ -27,7 +27,7 @@ exports.seed = function(knex, Promise) {
           title: "title3",
           recipe_post: "jhkkh",
           rating: 2,
-          recipe_picture: "https://realhousemoms.com/wp-content/uploads/One-Pot-Alfredo-Pasta-IG.jpg"
+          recipe_picture: "https://eluxemagazine.com/wp-content/uploads/2017/08/oh-my-veggies-korean-tofu-bowl.jpg"
         }
       ]);
     });

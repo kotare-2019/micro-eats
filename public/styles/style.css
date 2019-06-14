@@ -20,7 +20,7 @@ body {
   display: flex;
   padding: 10px;
   flex-direction: column;
-  height: 37%;
+  height: 240px;
   border-radius: 4px;
   /* width: 19%; */
   /* border: solid black 1px; */
@@ -29,11 +29,9 @@ body {
 }
 
 .imgs {
-  height: 150px;
+  height: 200px;
 }
-.img_div {
-  border: 1px solid black;
-}
+
 
 h1 {
   text-align: center;
